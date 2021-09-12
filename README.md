@@ -23,3 +23,20 @@ Working MTV:
 └── venv
 
 ```
+
+
+# Migrations
+
+Flask-Migrate is an extension that handles SQLAlchemy database migrations for Flask applications using Alembic. The database operations are made available through the Flask command-line interface.
+
+- [Flask-Migrate](https://flask-migrate.readthedocs.io/en/latest/)
+
+```bash
+pip install Flask-Migrate
+
+flask db init
+
+flask db migrate\n
+
+flask db upgrade
+```
