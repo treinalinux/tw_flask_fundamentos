@@ -1,6 +1,10 @@
 # Flask 
 
 
+Working MTV:
+- Model
+- Template
+- Views
 
 ```bash
 (venv) ➜ flask_project (main) ✗ tree
