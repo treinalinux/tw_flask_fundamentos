@@ -1,15 +1,21 @@
 # Flask 
 
 
+
 ```bash
-venv) ➜ app tree             
+(venv) ➜ flask_project (main) ✗ tree
 .
-├── __init__.py
-├── models
-│   └── __init__.py
-├── templates
-│   └── __init__.py
-└── views
-    └── __init__.py
+├── app
+│   ├── __init__.py
+│   ├── models
+│   │   └── __init__.py
+│   ├── templates
+│   │   └── __init__.py
+│   └── views
+│       ├── cliente_view.py
+│       ├── __init__.py
+├── README.md
+├── run.py
+└── venv
 
 ```
