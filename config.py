@@ -1,10 +1,9 @@
-# DEBUG = True
+DEBUG = True
 
 USERNAME = 'root'
-PASSWORD = 'maria@123'
-SERVER = 'localhost'
+PASSWORD = 'root'
+SERVER = '127.0.0.1'
 DB = 'flask_fundamentos'
 
 SQLALCHEMY_DATABASE_URI = f'mysql://{USERNAME}:{PASSWORD}@{SERVER}/{DB}'
-
 SQLALCHEMY_TRACK_MODIFICATIONS = True
