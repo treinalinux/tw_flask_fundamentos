@@ -10,7 +10,7 @@ def home():
     return 'Feliz em te ver por aqui...'
 
 
-@app.route('/opcional', defaults={'nome': None})
+@app.route('/opcional', defaults={'nome': None}, methods={'GET'})
 @app.route('/opcional/<string:nome>')
 def opcional(nome):
     """TODO: Docstring for opcional.
