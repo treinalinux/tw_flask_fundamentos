@@ -1,3 +1,4 @@
+from flask import render_template
 from app import app
 
 
@@ -21,3 +22,15 @@ def opcional(nome):
         return f'Seu nome é: {nome}'
     else:
         return 'Olá, tudo bem???'
+
+
+@app.route('/teste', defaults={'nome': None}, methods={'GET'})
+@app.route('/teste/<string:nome>')
+def teste(nome):
+    """TODO: Docstring for teste.
+
+    :nome: TODO
+    :returns: TODO
+
+    """
+    return render_template('/clientes/teste.html', nome_usuario=nome)
