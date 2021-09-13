@@ -36,7 +36,7 @@ pip install Flask-Migrate
 
 flask db init
 
-flask db migrate\n
+flask db migrate
 
 flask db upgrade
 ```
