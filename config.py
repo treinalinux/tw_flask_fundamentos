@@ -9,3 +9,5 @@ SQLALCHEMY_DATABASE_URI = f'mysql://{USERNAME}:{PASSWORD}@{SERVER}/{DB}'
 SQLALCHEMY_TRACK_MODIFICATIONS = True
 
 SECRET_KEY = 'treina$e00+o9hdi39r4)4gx=db0j0w-l&@&u5)f54dnes^f8jmk(lf&linux'
+
+BABEL_DEFAULT_LOCALE = 'pt'
