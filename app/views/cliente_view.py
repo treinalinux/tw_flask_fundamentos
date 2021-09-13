@@ -1,4 +1,4 @@
-from flask import render_template
+from flask import render_template, redirect, url_for
 from app.forms import cliente_form
 from app import db
 
@@ -24,11 +24,22 @@ def cadastrar_cliente():
                 profissao=profissao,
                 sexo=sexo
         )
-        
+
         try:
             db.session.add(cliente)
             db.session.commit()
+            return redirect(url_for('listar_clientes'))
         except Exception as e:
             raise e
 
     return render_template('clientes/form.html', form=form)
+
+
+@app.route('/listar_clientes', methods=['GET'])
+def listar_clientes():
+    """TODO: Docstring for listar_clientes.
+    :returns: TODO
+
+    """
+    clientes = cliente_model.Cliente.query.all()
+    return render_template('clientes/lista_clientes.html', clientes=clientes)

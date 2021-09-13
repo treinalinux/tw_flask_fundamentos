@@ -1,66 +1,65 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Cadastrar Cliente</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
-  </head>
-  <body>
-    <form method="post">
-      {{ form.csrf_token }}
-      <div class="form-group">
-        <label>Nome</label>
-          {{ form.nome(class="form-control") }}
+{% extends "clientes/base.html" %}
 
-          {% if form.errors.nome %}
-          <div class="alert alert-danger">
-            {{ form.errors.nome }}
-          </div>
-          {% endif %}
+{% block titulo %}
+Cadastro de Clientes
+{% endblock titulo %}
 
+{% block conteudo %}
+
+<form method="post">
+  {{ form.csrf_token }}
+  <div class="form-group">
+    <label>Nome</label>
+      {{ form.nome(class="form-control") }}
+
+      {% if form.errors.nome %}
+      <div class="alert alert-danger">
+        {{ form.errors.nome }}
       </div>
-        <label>Email</label>
-          {{ form.email(class="form-control")}}
+      {% endif %}
 
-          {% if form.errors.email %}
-          <div class="alert alert-danger">
-            {{ form.errors.email }}
-          </div>
-          {% endif %}
+  </div>
+    <label>Email</label>
+      {{ form.email(class="form-control")}}
 
+      {% if form.errors.email %}
+      <div class="alert alert-danger">
+        {{ form.errors.email }}
       </div>
-        <label>Data de Nascimento</label>
-          {{ form.data_nascimento(class="form-control") }}
+      {% endif %}
 
-          {% if form.errors.data_nascimento %}
-          <div class="alert alert-danger">
-            {{ form.errors.data_nascimento }}
-          </div>
-          {% endif %}
+  </div>
+    <label>Data de Nascimento</label>
+      {{ form.data_nascimento(class="form-control") }}
 
+      {% if form.errors.data_nascimento %}
+      <div class="alert alert-danger">
+        {{ form.errors.data_nascimento }}
       </div>
-        <label>Profissão</label>
-          {{ form.profissao(class="form-control") }}
+      {% endif %}
 
-          {% if form.errors.profissao %}
-          <div class="alert alert-danger">
-            {{ form.errors.profissao }}
-          </div>
-          {% endif %}
+  </div>
+    <label>Profissão</label>
+      {{ form.profissao(class="form-control") }}
 
+      {% if form.errors.profissao %}
+      <div class="alert alert-danger">
+        {{ form.errors.profissao }}
       </div>
-        <label>Sexo</label>
-          {{ form.sexo(class="form-control") }}
+      {% endif %}
 
-          {% if form.errors.sexo %}
-          <div class="alert alert-danger">
-            {{ form.errors.sexo }}
-          </div>
-          {% endif %}
+  </div>
+    <label>Sexo</label>
+      {{ form.sexo(class="form-control") }}
 
+      {% if form.errors.sexo %}
+      <div class="alert alert-danger">
+        {{ form.errors.sexo }}
       </div>
-      <button class="btn btn-primary" type="submit">Cadastrar</button>
-    </form>
-  </body>
-</html>
+      {% endif %}
+
+  </div>
+  <button class="btn btn-primary" type="submit">Cadastrar</button>
+</form>
+
+{% endblock conteudo %}
