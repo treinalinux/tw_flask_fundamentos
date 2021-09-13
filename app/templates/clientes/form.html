@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Cadastrar Cliente</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+  </head>
+  <body>
+    <form method="post">
+      <div class="form-group">
+        <label>Nome</label>
+          {{ form.nome(class="form-control") }}
+      </div>
+        <label>Email</label>
+          {{ form.email(class="form-control")}}
+      </div>
+        <label>Data de Nascimento</label>
+          {{ form.data_nascimento(class="form-control") }}
+      </div>
+        <label>Profissão</label>
+          {{ form.profissao(class="form-control") }}
+      </div>
+        <label>Sexo</label>
+          {{ form.sexo(class="form-control") }}
+      </div>
+    </form>
+  </body>
+</html>
