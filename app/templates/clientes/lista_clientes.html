@@ -21,12 +21,14 @@ Lista de Clientes
       <td>{{ c.data_nascimento.strftime("%d/%m/%Y") }}</td>
       <td>{{ c.profissao }}</td>
       <td>
-        <a href="{{ url_for('editar_cliente', id=c.id)}}">Editar</a>
-        <a href="#">Remover</a>
+          <a class="btn btn-primary" href="{{ url_for('editar_cliente', id=c.id)}}" role="button">Editar</a>
+          <a class="btn btn-danger" href="{{ url_for('remover_cliente', id=c.id)}}" role="button">Remover</a>
       </td>
     </tr>
     {% endfor %}
   </tbody>
 </table>
+
+<a href="{{ url_for('cadastrar_cliente') }}"><button class="btn btn-primary">Cadastrar Cliente</button></a>
 
 {% endblock conteudo %}

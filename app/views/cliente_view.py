@@ -1,4 +1,4 @@
-from flask import render_template, redirect, url_for
+from flask import render_template, redirect, url_for, request
 from app.forms import cliente_form
 from app import db
 
@@ -90,3 +90,23 @@ def editar_cliente(id):
             raise e
 
     return render_template('clientes/form.html', form=form)
+
+
+@app.route('/remover_cliente/<int:id>', methods=['POST', 'GET'])
+def remover_cliente(id):
+    """TODO: Docstring for remover_cliente.
+
+    :id: TODO
+    :returns: TODO
+
+    """
+    cliente = cliente_model.Cliente.query.filter_by(id=id).first()
+    if request.method == 'POST':
+        try:
+            db.session.delete(cliente)
+            db.session.commit()
+            return redirect(url_for('listar_clientes'))
+        except Exception as e:
+            raise e
+
+    return render_template('clientes/remover_cliente.html', cliente=cliente)
