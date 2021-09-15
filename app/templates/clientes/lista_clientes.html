@@ -21,7 +21,7 @@ Lista de Clientes
       <td>{{ c.data_nascimento.strftime("%d/%m/%Y") }}</td>
       <td>{{ c.profissao }}</td>
       <td>
-        <a href="#">Editar</a>
+        <a href="{{ url_for('editar_cliente', id=c.id)}}">Editar</a>
         <a href="#">Remover</a>
       </td>
     </tr>
