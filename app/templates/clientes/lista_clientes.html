@@ -17,8 +17,8 @@ Lista de Clientes
   <tbody>
     {% for c in clientes %}
     <tr>
-      <td>{{ c.nome }}</td>
-      <td>{{ c.data_nascimento }}</td>
+        <td><a href="{{ url_for('listar_cliente', id=c.id)}}">{{ c.nome }}</a></td>
+      <td>{{ c.data_nascimento.strftime("%d/%m/%Y") }}</td>
       <td>{{ c.profissao }}</td>
       <td>
         <a href="#">Editar</a>

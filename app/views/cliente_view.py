@@ -43,3 +43,16 @@ def listar_clientes():
     """
     clientes = cliente_model.Cliente.query.all()
     return render_template('clientes/lista_clientes.html', clientes=clientes)
+
+
+@app.route('/listar_cliente/<int:id>')
+def listar_cliente(id):
+    """TODO: Docstring for listar_cliente.
+
+    :id: TODO
+    :returns: TODO
+
+    """
+    cliente = cliente_model.Cliente.query.filter_by(id=id).first()
+    
+    return render_template('clientes/lista_cliente.html', cliente=cliente)
